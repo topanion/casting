@@ -1,0 +1,39 @@
+.basic_information {
+  border-width: 0.15rem;
+  border-radius: 1rem;
+
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+
+  border-color: #8149a1;
+  color: #8149a1;
+  font-weight: 600;
+}
+
+.non-selected {
+  border-width: 0.15rem;
+  border-radius: 1rem;
+
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+
+  border-color: #202020;
+  color: #202020;
+  font-weight: 600;
+}
+
+.section_button {
+  border-top-width: 0.12rem;
+  border-left-width: 0.12rem;
+  border-right-width: 0.12rem;
+}
+
+.current_section {
+  margin-bottom: -0.12em;
+}
