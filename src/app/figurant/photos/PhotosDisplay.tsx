@@ -34,7 +34,7 @@ export default function PhotosDisplay({
 
   return (
     <>
-      <div className="bg-white flex md:flex-row flex-col px-[7%] py-[3%] gap-10">
+      <div className="bg-white flex md:flex-row flex-col px-[7%] py-[3%] gap-10 min-h-[70vh]">
         {photos && allUrl && modalOpen && (
           <GalleryModal
             setOpen={setModalOpen}

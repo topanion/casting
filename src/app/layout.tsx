@@ -3,6 +3,8 @@ import "../styles/display.css";
 
 import type { Metadata } from "next";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Casting Express",
   description: "Une application web pour gérer tout ton parcours casting !",
