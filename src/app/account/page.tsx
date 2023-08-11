@@ -10,8 +10,6 @@ export default async function Account() {
     data: { session },
   } = await supabase.auth.getSession();
 
-  console.log("user is ", session?.user);
-
   return (
     <div className="w-screen h-screen flex">
       <AccountForm session={session} />

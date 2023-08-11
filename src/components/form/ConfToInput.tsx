@@ -3,6 +3,7 @@ import ArrayChoice from "./ArrayChoice";
 import SingleChoice from "./SingleChoice";
 import NumberSelect from "./NumberSelect";
 import { Database } from "@/types/supabase";
+import TextInput from "./TextInput";
 type Figurant = Database["public"]["Tables"]["profils_figurants"]["Row"] & {
   [key: string]: any; // Add index signature to allow any string property name
 };
@@ -44,6 +45,8 @@ export default function ConfToInput({
       />
     );
   } else if (input.type === "number") {
+    console.log("conftoinput creates a number input");
+
     return (
       <NumberSelect
         name={input.name}
@@ -54,6 +57,16 @@ export default function ConfToInput({
           handleSetValue(value);
         }}
         unit={input.unit}
+      />
+    );
+  } else if (input.type === "text") {
+    return (
+      <TextInput
+        name={input.name}
+        current={figurant[input.value]}
+        setValue={(value) => {
+          handleSetValue(value);
+        }}
       />
     );
   } else {

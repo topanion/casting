@@ -17,6 +17,12 @@ interface numberConf {
   unit: string | null;
 }
 
+interface textInputConf {
+  name: string;
+  value: keyof Figurant;
+  type: "text";
+}
+
 export const topContent: (textConf | numberConf)[] = [
   {
     name: "Prestations",
@@ -160,5 +166,33 @@ export const middleContent: (textConf | numberConf)[] = [
     min: 30,
     max: 50,
     unit: "",
+  },
+];
+
+export const linksContent: textInputConf[] = [
+  {
+    name: "Votre bande démo",
+    value: "bande_demo",
+    type: "text",
+  },
+  {
+    name: "Lien Instagram",
+    value: "instagram",
+    type: "text",
+  },
+  {
+    name: "Lien TikTok",
+    value: "tiktok",
+    type: "text",
+  },
+  {
+    name: "Lien Facebook",
+    value: "facebook",
+    type: "text",
+  },
+  {
+    name: "Site internet",
+    value: "site",
+    type: "text",
   },
 ];

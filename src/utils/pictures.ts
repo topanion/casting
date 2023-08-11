@@ -49,26 +49,23 @@ export const createNewPictureLinkWithFigurant = async (
 };
 
 // create an array of url from a Photo array
-export const photosToUrlArray = async (
+export const photosToUrlArray = (
   photos: Photos[] | null,
   supabase: SupabaseClient<Database>,
   table: string
-): Promise<string[] | null> => {
+): string[] | null => {
   if (!photos) return null;
 
-  let tmp: any[] = await Promise.all(
-    photos?.map(async (e) => {
-      if (!e?.url) return "";
-      const { data, error } = await supabase.storage
-        .from(table)
-        .download(e.url);
+  let tmp: string[] = photos?.map((e) => {
+    if (!e?.url) return "";
+    const { data } = supabase.storage.from(table).getPublicUrl(e.url);
 
-      if (data) {
-        const tmp_url = URL.createObjectURL(data);
-        return tmp_url;
-      }
-    })
-  );
+    if (data) {
+      return data.publicUrl;
+    } else {
+      return "";
+    }
+  });
 
   return tmp;
 };

@@ -3,6 +3,7 @@ import Apparence from "./Apparence";
 import Mensurations from "./Mensurations";
 import useFigurant from "@/utils/context/figurantContext";
 import PicturesInProfile from "./PicturesInProfile";
+import Liens from "./Liens";
 
 export default function ProfileDisplay({
   setMode,
@@ -16,6 +17,7 @@ export default function ProfileDisplay({
       <div className="bg-white w-full flex md:flex-row flex-col px-[7%] py-[3%] gap-10">
         <div className="flex flex-col gap-6 md:w-[20%]">
           <PicturesInProfile />
+          <Liens />
         </div>
 
         <div className="flex flex-col w-[60%] gap-8">

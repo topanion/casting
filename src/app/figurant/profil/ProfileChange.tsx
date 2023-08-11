@@ -6,6 +6,8 @@ import { useState, useEffect } from "react";
 import { middleContent } from "@/conf/profile";
 import ConfToInput from "@/components/form/ConfToInput";
 import useFigurant from "@/utils/context/figurantContext";
+import PicturesInProfile from "./PicturesInProfile";
+import LinksChange from "./LinksChange";
 
 export default function ProfileChange({
   setMode,
@@ -50,12 +52,8 @@ export default function ProfileChange({
     <>
       <div className="bg-white w-full flex md:flex-row flex-col px-[7%] py-[3%] gap-10">
         <div className="flex flex-col gap-6 md:w-[20%]">
-          <div className="w-full h-[40vh] rounded-md bg-gray-500" />
-          <div className="flex flex-row gap-6">
-            <div className="rounded-md h-[12vh] w-full bg-gray-500" />
-            <div className="rounded-md h-[12vh] w-full bg-gray-500" />
-            <div className="rounded-md h-[12vh] w-full bg-gray-500" />
-          </div>
+          <PicturesInProfile />
+          <LinksChange setFigurant={setFigurantCopy} />
         </div>
         <div className="flex flex-col w-[60%] gap-8">
           <div className="flex flex-col gap-3 py-3">

@@ -10,7 +10,6 @@ import TopProfile from "./top/TopProfile";
 import MiddleSections from "./MiddleSections";
 import { getFigurantByUsername, getFigurantPhotosById } from "@/utils/figurant";
 type Figurant = Database["public"]["Tables"]["profils_figurants"]["Row"] | null;
-type Photos = Database["public"]["Tables"]["photos_figurants"]["Row"] | null;
 import useFigurant from "@/utils/context/figurantContext";
 import { photosToUrlArray } from "@/utils/pictures";
 
@@ -25,8 +24,8 @@ export default function Figurant({
   const [loading, setLoading] = useState(true);
   const { figurant, setFigurant } = useFigurant();
   const { photos, setPhotos } = useFigurant();
-  const { allUrl, setAllUrl } = useFigurant();
-  const { isUser, setIsUser } = useFigurant();
+  const { setAllUrl } = useFigurant();
+  const { setIsUser } = useFigurant();
 
   const user = session?.user;
 
@@ -60,11 +59,7 @@ export default function Figurant({
       if (tmpPhotos) {
         setPhotos(tmpPhotos);
 
-        let tmpUrl = await photosToUrlArray(
-          tmpPhotos,
-          supabase,
-          "figurant_pictures"
-        );
+        let tmpUrl = photosToUrlArray(tmpPhotos, supabase, "figurant_pictures");
         setAllUrl(tmpUrl);
       }
     } catch (error) {
